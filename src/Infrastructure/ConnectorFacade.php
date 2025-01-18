@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Raketa\BackendTestTask\Infrastructure;
 
@@ -30,7 +30,7 @@ class ConnectorFacade
 
         try {
             $isConnected = $redis->isConnected();
-            if (! $isConnected && $redis->ping('Pong')) {
+            if (!$isConnected && $redis->ping('Pong')) {
                 $isConnected = $redis->connect(
                     $this->host,
                     $this->port,

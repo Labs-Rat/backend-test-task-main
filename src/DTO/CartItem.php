@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Raketa\BackendTestTask\Domain;
+namespace Raketa\BackendTestTask\DTO;
 
 final readonly class CartItem
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Raketa\BackendTestTask\Model;
+namespace Raketa\BackendTestTask\DTO;
 
 final readonly class Customer
 {

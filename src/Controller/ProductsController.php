@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Raketa\BackendTestTask\View\ProductsView;
 
-readonly class GetProductsController
+readonly class ProductsController
 {
     public function __construct(
         private ProductsView $productsVew

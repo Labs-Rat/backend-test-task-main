@@ -43,7 +43,7 @@ final class JsonResponse implements ResponseInterface
         // TODO: Implement getHeaderLine() method.
     }
 
-    public function withHeader(string $name, $value): MessageInterface
+    public function withHeader(string $name, $value): ResponseInterface
     {
         // TODO: Implement withHeader() method.
     }

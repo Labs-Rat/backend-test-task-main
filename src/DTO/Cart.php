@@ -2,14 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace Raketa\BackendTestTask\Domain;
+namespace Raketa\BackendTestTask\DTO;
 
 final class Cart
 {
     public function __construct(
         readonly private string $uuid,
-        readonly private Customer $customer,
-        readonly private string $paymentMethod,
+        private Customer $customer,
+        private string $paymentMethod,
         private array $items,
     ) {
     }
@@ -27,6 +27,16 @@ final class Cart
     public function getPaymentMethod(): string
     {
         return $this->paymentMethod;
+    }
+
+    public function setCustomer(Customer $customer): void
+    {
+        $this->customer = $customer;
+    }
+
+    public function setPaymentMethod(string $paymentMethod): void
+    {
+       $this->paymentMethod = $paymentMethod;
     }
 
     public function getItems(): array

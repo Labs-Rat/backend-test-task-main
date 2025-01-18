@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Raketa\BackendTestTask\Repository;
 
@@ -19,7 +19,7 @@ class ProductRepository
     public function getByUuid(string $uuid): Product
     {
         $row = $this->connection->fetchOne(
-            "SELECT * FROM products WHERE uuid = " . $uuid,
+            "SELECT * FROM products WHERE uuid = '{$uuid}'",
         );
 
         if (empty($row)) {
@@ -32,9 +32,9 @@ class ProductRepository
     public function getByCategory(string $category): array
     {
         return array_map(
-            static fn (array $row): Product => $this->make($row),
+            fn(array $row): Product => $this->make($row),
             $this->connection->fetchAllAssociative(
-                "SELECT id FROM products WHERE is_active = 1 AND category = " . $category,
+                "SELECT id FROM products WHERE is_active = 1 AND category = '{$category}'",
             )
         );
     }
